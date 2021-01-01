@@ -1,6 +1,6 @@
 {
   "name": "@raddishiow/react-relativetime",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Component which takes a JSDate object and returns a localised string describing the date relative to now.",
   "main": "lib/index.js",
   "scripts": {
