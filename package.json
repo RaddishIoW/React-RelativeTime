@@ -1,0 +1,66 @@
+{
+  "name": "@raddishiow/react-relativetime",
+  "version": "1.0.0",
+  "description": "React Component which takes a JSDate object and returns a localised string describing the date relative to now.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm run build:babel && npm run build:flow-copy-source",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "flow": "flow",
+    "update-flow-typed": "flow-typed update",
+    "build:babel": "babel src/ -d lib",
+    "build:flow-copy-source": "flow-copy-source src lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaddishIoW/React-RelativeTime.git"
+  },
+  "author": "Adam Radestock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaddishIoW/React-RelativeTime/issues"
+  },
+  "homepage": "https://github.com/RaddishIoW/React-RelativeTime#readme",
+  "standard": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "flowtype",
+      "react",
+      "react-hooks"
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "luxon": "^1.25.0",
+    "react": "^16.0.0 || ^17.0.1",
+    "react-dom": "^16.0.0 || ^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-syntax-flow": "^7.12.1",
+    "@babel/plugin-transform-flow-strip-types": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-flow": "^7.12.1",
+    "@babel/preset-react": "^7.12.10",
+    "babel-eslint": "^10.1.0",
+    "documentation": "^13.1.0",
+    "eslint": "^7.16.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-config-standard-jsx": "^10.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "flow-bin": "^0.141.0",
+    "flow-copy-source": "^2.0.9",
+    "flow-typed": "^3.2.1",
+    "standard": "^16.0.3"
+  }
+}

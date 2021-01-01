@@ -1,0 +1,67 @@
+---
+root: true
+env:
+  browser: true
+  es2020: true
+extends:
+  - standard
+  - 'eslint:recommended'
+  - 'plugin:react/all'
+  - 'plugin:react-hooks/recommended'
+parser: 'babel-eslint'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 11
+  sourceType: module
+plugins:
+  - react
+  - react-hooks
+rules:
+  react/jsx-indent:
+    - 2
+    - 2
+  react/jsx-indent-props:
+    - 2
+    - 2
+  react/jsx-max-depth:
+    - 0
+  react/function-component-definition:
+    - 1
+    - namedComponents: arrow-function
+  react/no-multi-comp:
+    - 2
+    - ignoreStateless: true
+  react/jsx-max-props-per-line:
+    - 1
+    - maximum: 1
+      when: multiline
+  react/jsx-no-bind:
+    - 2
+    - ignoreRefs: true
+  react/jsx-no-literals:
+    - 0
+  react/jsx-filename-extension:
+    - 2
+    - extensions:
+        - 'jsx'
+        - 'jsx.flow'
+  react/require-default-props:
+    - 0
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - never
+settings:
+  react:
+    - pragma: 'React'
+    - version: 'detect'
