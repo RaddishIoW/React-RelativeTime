@@ -1,3 +1,3 @@
-import RelativeTime from './RelativeTime.jsx'
+import RelativeTime from './RelativeTime'
 
 export { RelativeTime }
