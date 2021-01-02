@@ -1,7 +1,14 @@
 {
   "name": "@raddishiow/react-relativetime",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Component which takes a JSDate object and returns a localised string describing the date relative to now.",
+  "keywords": [
+    "react",
+    "relative",
+    "time",
+    "luxon",
+    "date"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "build": "npm run build:babel && npm run build:flow-copy-source",
