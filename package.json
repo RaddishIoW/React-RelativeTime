@@ -10,6 +10,7 @@
     "date"
   ],
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "npm run build:babel && npm run build:flow-copy-source && npm run build:flow-to-dts",
     "test": "echo \"Error: no test specified\" && exit 1",
