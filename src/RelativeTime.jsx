@@ -9,7 +9,7 @@ type Props = {
 
 const RelativeTime = (props: Props): React.Node => {
   const { time } = props
-  const [relTime, setRelTime] = React.useState()
+  const [relTime, setRelTime] = React.useState<string>('')
   const [intervalID, setIntervalID] = React.useState()
 
   React.useEffect(() => {
@@ -28,11 +28,7 @@ const RelativeTime = (props: Props): React.Node => {
     }
   }, [time])
 
-  return (
-    <>
-      {relTime}
-    </>
-  )
+  return relTime
 }
 
 export default RelativeTime

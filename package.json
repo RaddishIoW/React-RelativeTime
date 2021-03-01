@@ -11,12 +11,13 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "build": "npm run build:babel && npm run build:flow-copy-source",
+    "build": "npm run build:babel && npm run build:flow-copy-source && npm run build:flow-to-dts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "flow": "flow",
     "update-flow-typed": "flow-typed update",
     "build:babel": "babel src/ -d lib",
-    "build:flow-copy-source": "flow-copy-source src lib"
+    "build:flow-copy-source": "flow-copy-source src lib",
+    "build:flow-to-dts": "cd lib && flow-to-dts index.js.flow index.d.ts && flow-to-dts RelativeTime.jsx.flow RelativeTime.d.tsx"
   },
   "files": [
     "lib"
@@ -67,6 +68,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "flow-bin": "0.145.0",
     "flow-copy-source": "2.0.9",
+    "flow-to-dts": "0.1.4",
     "flow-typed": "3.3.1",
     "standard": "16.0.3"
   }
