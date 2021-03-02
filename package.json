@@ -10,15 +10,13 @@
     "date"
   ],
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "typings": "./lib/index.d.ts",
   "scripts": {
-    "build": "npm run build:babel && npm run build:flow-copy-source && npm run build:flow-to-dts",
+    "build": "yarn run build:babel && yarn run build:tsc-defs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "flow": "flow",
-    "update-flow-typed": "flow-typed update",
-    "build:babel": "babel src/ -d lib",
-    "build:flow-copy-source": "flow-copy-source src lib",
-    "build:flow-to-dts": "cd lib && flow-to-dts index.js.flow index.d.ts && flow-to-dts RelativeTime.jsx.flow RelativeTime.d.tsx"
+    "build:babel": "babel src/ -d lib --extensions \".ts,.tsx\" --source-maps",
+    "build:tsc-defs": "tsc",
+    "typesync": "typesync"
   },
   "files": [
     "lib"
@@ -33,14 +31,6 @@
     "url": "https://github.com/RaddishIoW/React-RelativeTime/issues"
   },
   "homepage": "https://github.com/RaddishIoW/React-RelativeTime#readme",
-  "standard": {
-    "parser": "babel-eslint",
-    "plugins": [
-      "flowtype",
-      "react",
-      "react-hooks"
-    ]
-  },
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "luxon": "^1.25.0",
@@ -50,27 +40,35 @@
   "devDependencies": {
     "@babel/cli": "7.12.17",
     "@babel/core": "7.12.17",
-    "@babel/plugin-syntax-flow": "7.12.13",
-    "@babel/plugin-transform-flow-strip-types": "7.12.13",
     "@babel/plugin-transform-runtime": "7.12.17",
     "@babel/preset-env": "7.12.17",
-    "@babel/preset-flow": "7.12.13",
     "@babel/preset-react": "7.12.13",
+    "@babel/preset-typescript": "7.12.17",
+    "@types/babel__core": "7.1.12",
+    "@types/babel__plugin-transform-runtime": "7.9.1",
+    "@types/babel__preset-env": "7.9.1",
+    "@types/eslint": "7.2.6",
+    "@types/luxon": "^1.26.1",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "4.15.1",
+    "@typescript-eslint/parser": "4.15.1",
     "babel-eslint": "10.1.0",
     "documentation": "13.1.1",
     "eslint": "7.20.0",
     "eslint-config-standard": "16.0.2",
     "eslint-config-standard-jsx": "10.0.0",
-    "eslint-plugin-flowtype": "5.3.1",
+    "eslint-config-standard-react": "11.0.1",
+    "eslint-config-standard-with-typescript": "20.0.0",
+    "eslint-import-resolver-typescript": "2.4.0",
+    "eslint-plugin-compat": "3.9.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.3.1",
+    "eslint-plugin-radar": "0.2.1",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
-    "flow-bin": "0.145.0",
-    "flow-copy-source": "2.0.9",
-    "flow-to-dts": "0.1.4",
-    "flow-typed": "3.3.1",
-    "standard": "16.0.3"
+    "typescript": "4.1.5",
+    "typesync": "0.8.0"
   }
 }

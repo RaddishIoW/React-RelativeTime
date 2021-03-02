@@ -1,16 +1,14 @@
-// @flow
-
 import * as React from 'react'
 import { DateTime } from 'luxon'
 
-type Props = {
-  +time: Date
+interface Props {
+  readonly time: Date
 }
 
-const RelativeTime = (props: Props): React.Node => {
+const RelativeTime: React.FC<Props> = (props: Props) => {
   const { time } = props
-  const [relTime, setRelTime] = React.useState<string>('')
-  const [intervalID, setIntervalID] = React.useState()
+  const [relTime, setRelTime] = React.useState<string | null>(null)
+  const [intervalID, setIntervalID] = React.useState<NodeJS.Timeout>()
 
   React.useEffect(() => {
     let mounted = true
@@ -24,11 +22,16 @@ const RelativeTime = (props: Props): React.Node => {
     )
     return function cleanup () {
       mounted = false
-      clearInterval(intervalID)
+      intervalID != null && clearInterval(intervalID)
     }
   }, [time])
 
-  return relTime
+  return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <>
+      {relTime}
+    </>
+  )
 }
 
 export default RelativeTime

@@ -5,21 +5,45 @@ env:
   es2020: true
 extends:
   - standard
-  - 'eslint:recommended'
-  - 'plugin:react/all'
-  - 'plugin:react-hooks/recommended'
-parser: 'babel-eslint'
+  - standard-jsx
+  - standard-react
+  - standard-with-typescript
+  - eslint:recommended
+  - plugin:react/all
+  - plugin:react-hooks/recommended
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:import/react
+  - plugin:import/typescript
+  - plugin:compat/recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:radar/recommended
+parser: "@typescript-eslint/parser"
 parserOptions:
   ecmaFeatures:
     jsx: true
-  ecmaVersion: 11
+  ecmaVersion: 2020
   sourceType: module
+  project: './tsconfig.json'
 plugins:
   - react
   - react-hooks
+  - '@typescript-eslint'
+  - radar
 rules:
+  import/order:
+    - 1
+  import/prefer-default-export:
+    - 1
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+      - ".js"
+      - ".jsx"
+      - ".ts"
+      - ".tsx"
   react/jsx-indent:
-    - 2
+    - 0
     - 2
   react/jsx-indent-props:
     - 2
@@ -29,6 +53,8 @@ rules:
   react/function-component-definition:
     - 1
     - namedComponents: arrow-function
+  react/forbid-component-props:
+    - 1
   react/no-multi-comp:
     - 2
     - ignoreStateless: true
@@ -40,18 +66,17 @@ rules:
     - 2
     - ignoreRefs: true
   react/jsx-no-literals:
-    - 0
-  react/jsx-filename-extension:
-    - 2
-    - extensions:
-        - 'jsx'
-        - 'jsx.flow'
+    - 1
   react/require-default-props:
     - 0
+  no-void:
+    - 2
+    - allowAsStatement: true
   indent:
     - error
     - 2
     - SwitchCase: 1
+      offsetTernaryExpressions: true
   linebreak-style:
     - error
     - unix
@@ -61,7 +86,30 @@ rules:
   semi:
     - error
     - never
+  operator-linebreak:
+    - 2
+    - after
+    - overrides:
+        "?": ignore
+        ":": ignore
+  no-use-before-define: 'off'
+  "@typescript-eslint/no-use-before-define":
+    - error
 settings:
   react:
-    - pragma: 'React'
-    - version: 'detect'
+  - pragma: React
+  - version: detect
+  import/resolver:
+    node:
+      extensions:
+      - ".js"
+      - ".jsx"
+      - ".ts"
+      - ".tsx"
+    typescript:
+      alwaysTryTypes: true
+      project: "*/tsconfig.json"
+  import/parsers:
+    "@typescript-eslint/parser":
+    - ".ts"
+    - ".tsx"
