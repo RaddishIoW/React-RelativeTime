@@ -18,7 +18,7 @@ The relative time strings are provided by [Luxon](https://moment.github.io/luxon
 
 ```
 ...
-import { RelativeTime } from '@raddishiow/react-relativetime'
+import RelativeTime from '@raddishiow/react-relativetime'
 ...
 
 const date = new Date()
