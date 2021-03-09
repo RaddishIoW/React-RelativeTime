@@ -16,16 +16,20 @@ The relative time strings are provided by [Luxon](https://moment.github.io/luxon
 
 ## Usage
 
-```
+```jsx
 ...
 import RelativeTime from '@raddishiow/react-relativetime'
 ...
 
 const date = new Date()
 
-<RelativeTime time={Date} />
+<RelativeTime time={date} />
 ```
 
 ## Contributing
 
 Feel free to fork and create pull requests for features, fixes, etc.
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
+![Types: Typescript](https://img.shields.io/npm/types/@raddishiow/react-relativetime?style=for-the-badge)
