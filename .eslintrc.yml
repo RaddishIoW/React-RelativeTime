@@ -3,6 +3,7 @@ root: true
 env:
   browser: true
   es2020: true
+  jest: true
 extends:
   - standard
   - standard-jsx
@@ -18,6 +19,8 @@ extends:
   - plugin:compat/recommended
   - plugin:@typescript-eslint/recommended
   - plugin:radar/recommended
+  - plugin:jest/recommended
+  - plugin:jest/style
 parser: "@typescript-eslint/parser"
 parserOptions:
   ecmaFeatures:
@@ -30,6 +33,7 @@ plugins:
   - react-hooks
   - '@typescript-eslint'
   - radar
+  - jest
 rules:
   import/order:
     - 1
