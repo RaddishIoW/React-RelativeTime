@@ -49,7 +49,7 @@
     "@types/babel__core": "7.1.14",
     "@types/babel__plugin-transform-runtime": "7.9.1",
     "@types/babel__preset-env": "7.9.1",
-    "@types/eslint": "7.2.9",
+    "@types/eslint": "7.2.10",
     "@types/jest": "26.0.22",
     "@types/luxon": "1.26.3",
     "@types/react": "17.0.3",
