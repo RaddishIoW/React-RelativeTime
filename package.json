@@ -33,7 +33,7 @@
   "homepage": "https://github.com/RaddishIoW/React-RelativeTime#readme",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "luxon": "^1.25.0",
+    "luxon": "^2.0.0",
     "react": "^16.0.0 || ^17.0.1 || ^17.0.1",
     "react-dom": "^16.0.0 || ^17.0.1 || ^17.0.1"
   },
