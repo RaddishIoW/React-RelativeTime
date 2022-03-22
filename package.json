@@ -46,7 +46,7 @@
     "@babel/preset-typescript": "7.16.7",
     "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "11.2.7",
-    "@types/babel__core": "7.1.18",
+    "@types/babel__core": "7.1.19",
     "@types/babel__plugin-transform-runtime": "7.9.2",
     "@types/babel__preset-env": "7.9.2",
     "@types/eslint": "7.29.0",
